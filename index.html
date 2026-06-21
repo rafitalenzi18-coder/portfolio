@@ -83,7 +83,7 @@ section{position:relative;min-height:100vh;display:flex;align-items:center;paddi
 .node .dot.idle{background:var(--muted);box-shadow:none;}
  
 /* HERO */
-.hero{flex-direction:column;justify-content:center;text-align:center;padding-top:0;}
+.hero{flex-direction:column;justify-content:center;text-align:center;padding-top:18vh;}
 .hero-tag{font-family:'JetBrains Mono';font-size:12px;color:var(--cyan);letter-spacing:.3em;text-transform:uppercase;margin-bottom:26px;opacity:.9;}
 .hero h1{font-size:clamp(38px,7vw,84px);line-height:1.0;font-weight:700;margin:0 0 20px;letter-spacing:-.01em;}
 .hero h1 span{background:linear-gradient(90deg,var(--cyan),var(--purple));-webkit-background-clip:text;background-clip:text;color:transparent;}
@@ -650,14 +650,15 @@ document.querySelectorAll('#skills .tab').forEach(tab=>{
  
 /* ============ PROJECTS DATA ============ */
 const projects=[
-  {tag:'HTML/CSS/JS',title:'BoothHub — Booth Booking System',desc:'Designed the full UI/UX and built an admin dashboard automating booth bookings end-to-end, with live stats. Team project; led the front-end build.',stack:['HTML','CSS','JS','LocalStorage'],live:'https://rafitalenzi18-coder.github.io/BoothHub/index.html',code:'https://github.com/rafitalenzi18-coder?tab=repositories',image:'boothub.jpg'},
+  {tag:'HTML/CSS/JS',title:'BoothHub — Booth Booking System',desc:'Designed the full UI/UX and built an admin dashboard automating booth bookings end-to-end, with live stats. Team project; led the front-end build.',stack:['HTML','CSS','JS','LocalStorage'],live:'https://rafitalenzi18-coder.github.io/BoothHub/index.html',code:'https://github.com/rafitalenzi18-coder?tab=repositories',video:'boothub-demo.mp4'},
   {tag:'Web Development',title:'MIS Department Showcase Website',desc:'Built a web platform showcasing the Management Information Systems Department in an accessible, professional interface.',stack:['HTML','CSS','JS'],live:'https://mis-showcase.lovable.app',image:'mis-showcase.jpg'},
   {tag:'SQL · Database',title:'Saudia Airlines — DBMS Project',desc:'Team project analyzing Saudia\'s OLTP / 3-tier database architecture. Independently wrote all SQL — schema, constraints, and queries for Flights, Passengers, Bookings, Employees, and Airplanes.',stack:['SQL','ER Modeling','OLTP'],image:'sql-database.jpg'},
   {tag:'SQL · Database',title:'Airline Reservation Database',desc:'Modeled a relational database for flights, passengers, bookings, employees, and aircraft in SQL.',stack:['SQL','ER Modeling']},
-  {tag:'Python · Analytics',title:'Ticket Sales Management System',desc:'Menu-driven Python app for logging ticket sales, searching by ID, and generating reports — sales by event, sales over time, and descriptive statistics with interpretation.',stack:['Python','Pandas','NumPy','Matplotlib'],image:'ticket-sales.jpg'},
+  {tag:'Python · Analytics',title:'Ticket Sales Management System',desc:'Menu-driven Python app for logging ticket sales, searching by ID, and generating reports — sales by event, sales over time, and descriptive statistics with interpretation.',stack:['Python','Pandas','NumPy','Matplotlib'],video:'ticket-system-demo.mp4'},
 ];
 document.getElementById('projGrid').innerHTML=projects.map(p=>`
   <div class="proj-card">
+    ${p.video?`<div style="margin:-22px -22px 16px;border-radius:14px 14px 0 0;overflow:hidden;border-bottom:1px solid var(--line);"><video src="${p.video}" controls preload="metadata" style="width:100%;display:block;max-height:200px;object-fit:cover;"></video></div>`:''}
     ${p.image?`<div style="margin:-22px -22px 16px;border-radius:14px 14px 0 0;overflow:hidden;border-bottom:1px solid var(--line);"><img src="${p.image}" alt="${p.title}" style="width:100%;display:block;max-height:200px;object-fit:cover;"></div>`:''}
     <span class="tag">${p.tag}</span>
     <h3>${p.title}</h3>
